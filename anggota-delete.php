@@ -8,9 +8,10 @@ if (isset($_GET['delete'])) {
         ?>
             <script>
                 alert("Data Berhasil Di Delete");
+                window.location.href='http://localhost/perpustakan-12rpl2/perpustakaan-12rpl2/dashboard.php?page=anggota';
             </script>
         <?php
-        header('refresh:0; URL=http://localhost/perpustakaan-12rpl2/perpustakaan-12rpl2/dashboard.php?page=anggota');
+        // header('refresh:0; URL=http://localhost/perpustakaan-12rpl2/perpustakaan-12rpl2/dashboard.php?page=anggota');
     }
 }
 ////End of proses delete data/////////////////////////////////////////////////////////////////////////

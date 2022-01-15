@@ -78,6 +78,8 @@
                         include('anggota.php');
                     }elseif($_GET['page']=="anggota-delete"){
                         include('anggota-delete.php');
+                    }elseif($_GET['page']=="anggota-insert"){
+                        include('anggota-insert.php');
                     }elseif($_GET['page']=="buku"){
                         include('buku.php');
                     }elseif($_GET['page']=="anggota-edit"){
