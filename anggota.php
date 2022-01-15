@@ -79,7 +79,7 @@
                     </select>
                 </div>
                 <div class="form-group mt-2">
-                    <input class="form-control" type="text" name="tpt_lahir">
+                    <input class="form-control" type="text" name="tpt_lahir" placeholder="Tempat Lahir">
                 </div>
                 <div class="form-group mt-2">
                     <input class="form-control" type="date" name="tgl_lahir">
@@ -101,10 +101,14 @@
                 <div class="form-group mt-2">
                     <select class="form-control" name="jurusan" required>
                         <option value="">--Pilih Jurusan--</option>
-                        <option value="RPL">Rekayasa Perangkat Lunak</option>
-                        <option value="TAV">Teknik Audio Video</option>
-                        <option value="TKR">Teknik Kendaraan Ringan</option>
-                        <option value="TITL">Teknik Instalasi Tenaga Listrik</option>
+                        <?php
+                            $query_kelas = mysqli_query($konek,"SELECT * FROM jurusan");
+                            foreach ($query_kelas as $kelas) {
+                                ?>
+                                <option value="<?php echo $kelas['id_jurusan']?>"><?php echo $kelas['nama_jurusan']?></option>
+                                <?php
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group mt-2">
