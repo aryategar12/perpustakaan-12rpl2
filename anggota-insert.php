@@ -4,14 +4,13 @@ if (isset($_POST['save'])) {
 $nis        = $_POST['nis'];
 $nama       = $_POST['nama'];
 $jk         = $_POST['jk'];
-$tgl_lahir  = $_POST['tpt_lahir'];
+$tpt_lahir  = $_POST['tpt_lahir'];
 $tgl_lahir  = $_POST['tgl_lahir'];
 $kelas      = $_POST['id_kelas'];
 $jurusan    = $_POST['id_jurusan'];
 $tlp        = $_POST['tlp'];
 $alamat     = $_POST['alamat'];
-$query_insert = mysqli_query($konek,"INSERT INTO anggota 
-VALUES('','$nis','$nama','$jk','$kelas','$jurusan','$tgl_lahir','$jk','$tlp','$alamat')");
+$query_insert = mysqli_query($konek,"INSERT INTO anggota VALUES('','$nis','$nama','$jk','$tpt_lahir','$tgl_lahir','$kelas','$jurusan','$tlp','$alamat')");
     if($query_insert)
     {
         ?>
@@ -19,7 +18,7 @@ VALUES('','$nis','$nama','$jk','$kelas','$jurusan','$tgl_lahir','$jk','$tlp','$a
                 Data Berhasil Disimpan
             </div>
         <?php
-        header('refresh:3; URL=http://localhost/my_website1/admin.php?page=anggota');
+        header('refresh:1; URL=http://localhost/perpustakan-12rpl2/perpustakaan-12rpl2/dashboard.php?page=anggota');
     }
     else
     {

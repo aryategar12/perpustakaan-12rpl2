@@ -43,11 +43,11 @@
                     <center><img src="image/logo-login.jfif" width="200px" alt="logo-login"></center>
                         <center><h1 class="mt-5">SI Perpustakaan<br>SMK Taruna Bangsa</h1></center>
                         <form action="" method="post">
-                            <div class="form-group mt-5 mb-5">
+                            <div class="form-group mt-5 mb-3">
                                 <!-- <label for="username">Username</label> -->
                                 <input class="form-control" type="text" id="username" name="username" placeholder="username" required>
                             </div>
-                            <div class="form-group mb-5">
+                            <div class="form-group mb-3">
                                 <!-- <label for="password">Password</label> -->
                                 <input class="form-control" type="password" id="password" name="password" placeholder="password" required>
                             </div>

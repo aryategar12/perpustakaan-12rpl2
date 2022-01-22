@@ -25,7 +25,13 @@
         <th>--Action--</th>
     </tr>
     <?php
-        $query = mysqli_query($konek,"SELECT * FROM anggota");
+        // $query = mysqli_query($konek,"SELECT * FROM anggota");
+        $query = mysqli_query($konek,"SELECT anggota.id_anggota, anggota.nis, anggota.nama, anggota.jk, 
+        anggota.tempat_lahir,anggota.tanggal_lahir, anggota.id_kelas, anggota.id_jurusan, anggota.nomor_telepon, 
+        anggota.alamat, kelas.id_kelas, kelas.nama_kelas, jurusan.id_jurusan, jurusan.nama_jurusan
+        FROM anggota
+        JOIN kelas ON anggota.id_kelas = kelas.id_kelas
+        JOIN jurusan ON anggota.id_jurusan = jurusan.id_jurusan");
         $no = 1;
         foreach ($query as $row) {
     ?>
@@ -36,8 +42,8 @@
         <td align="center" valign="middle"><?php echo $row['jk']=="L"?"Laki-laki":"Perempuan"; ?></td>
         <td valign="middle"><?php echo $row['tempat_lahir']; ?></td>
         <td valign="middle"><?php echo $row['tanggal_lahir']; ?></td>
-        <td valign="middle"><?php echo $row['id_kelas']; ?></td>
-        <td valign="middle"><?php echo $row['id_jurusan']; ?></td>
+        <td valign="middle"><?php echo $row['nama_kelas']; ?></td>
+        <td valign="middle"><?php echo $row['nama_jurusan']; ?></td>
         <td valign="middle"><?php echo $row['nomor_telepon']; ?></td>
         <td valign="middle"><?php echo $row['alamat']; ?></td>
         <td valign="middle">
@@ -85,7 +91,7 @@
                     <input class="form-control" type="date" name="tgl_lahir">
                 </div>
                 <div class="form-group mt-2">
-                    <select class="form-control" name="kelas" required>
+                    <select class="form-control" name="id_kelas" required>
                         <option value="">--Pilih Kelas--</option>
                         <?php
                             $query_kelas = mysqli_query($konek,"SELECT * FROM kelas");
@@ -95,17 +101,16 @@
                                 <?php
                             }
                         ?>
-                        
                     </select>
                 </div>
                 <div class="form-group mt-2">
-                    <select class="form-control" name="jurusan" required>
+                    <select class="form-control" name="id_jurusan" required>
                         <option value="">--Pilih Jurusan--</option>
                         <?php
-                            $query_kelas = mysqli_query($konek,"SELECT * FROM jurusan");
-                            foreach ($query_kelas as $kelas) {
+                            $query_jurusan = mysqli_query($konek,"SELECT * FROM jurusan");
+                            foreach ($query_jurusan as $jurusan) {
                                 ?>
-                                <option value="<?php echo $kelas['id_jurusan']?>"><?php echo $kelas['nama_jurusan']?></option>
+                                <option value="<?php echo $jurusan['id_jurusan']?>"><?php echo $jurusan['nama_jurusan']?></option>
                                 <?php
                             }
                         ?>
