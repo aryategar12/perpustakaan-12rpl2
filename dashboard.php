@@ -38,7 +38,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="/my_website1/admin.php">Home</a>
+                                <a class="nav-link active" aria-current="page" href="http://localhost/perpustakan-12rpl2/perpustakaan-12rpl2/dashboard.php">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="?page=anggota">Anggota</a>

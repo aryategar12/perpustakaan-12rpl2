@@ -64,25 +64,25 @@ $id = $_GET['id'];
                     ?>
                 </select>
             </div>
-                <div class="form-group mt-2">
-                    <label for="">Jurusan</label>
-                    <select class="form-control" name="id_jurusan" required>
-                        <option value="<?php echo $row['id_jurusan'] ?>"><?php echo $row['nama_jurusan'] ?></option>
-                        <option value="">--Pilih Jurusan--</option>
-                        <?php
-                            $query_jurusan = mysqli_query($konek,"SELECT * FROM jurusan");
-                            foreach ($query_jurusan as $jurusan) {
-                                ?>
-                                <option value="<?php echo $jurusan['id_jurusan']?>"><?php echo $jurusan['nama_jurusan']?></option>
-                                <?php
-                            }
-                        ?>
-                    </select>
-                </div>
-                <div class="form-group mt-2">
-                    <label for="">No. Tlp</label>
-                    <input value="<?php echo $row['nomor_telepon'] ?>" class="form-control" type="text" name="tlp" placeholder="Nomor Telepon">
-                </div>
+            <div class="form-group mt-2">
+                <label for="">Jurusan</label>
+                <select class="form-control" name="id_jurusan" required>
+                    <option value="<?php echo $row['id_jurusan'] ?>"><?php echo $row['nama_jurusan'] ?></option>
+                    <option value="">--Pilih Jurusan--</option>
+                    <?php
+                        $query_jurusan = mysqli_query($konek,"SELECT * FROM jurusan");
+                        foreach ($query_jurusan as $jurusan) {
+                            ?>
+                            <option value="<?php echo $jurusan['id_jurusan']?>"><?php echo $jurusan['nama_jurusan']?></option>
+                            <?php
+                        }
+                    ?>
+                </select>
+            </div>
+            <div class="form-group mt-2">
+                <label for="">No. Tlp</label>
+                <input value="<?php echo $row['nomor_telepon'] ?>" class="form-control" type="text" name="tlp" placeholder="Nomor Telepon">
+            </div>
                 <div class="form-group mt-2">
                     <label for="">Alamat</label>
                     <textarea name="alamat" class="form-control" placeholder="Alamat Lengkap"><?php echo $row['alamat'] ?></textarea>
